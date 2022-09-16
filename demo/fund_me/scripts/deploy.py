@@ -2,7 +2,7 @@ from brownie import FundMe, MockV3Aggregator, network, accounts, config
 from scripts.helpful import get_account, deploy_mocks, LOCAL_BLOCKCHAIN_ENVIRONNMENTS
 
 
-def deploy_found_me():
+def deploy_fund_me():
     account = get_account()
     if network.show_active() not in LOCAL_BLOCKCHAIN_ENVIRONNMENTS:
         price_feed_address = config['networks'][network.show_active()][
@@ -24,4 +24,4 @@ def deploy_found_me():
 
 
 def main():
-    deploy_found_me()
+    deploy_fund_me()
